@@ -24,6 +24,7 @@ class V1::FishController < ApplicationController
   private
 
   def fish_params
-    params.permit(:fisherman_id, :species)
+    params.permit(:catch_time, :fisherman_id, :latitude,
+                  :length, :longitude, :sex, :species, :weight)
   end
 end
