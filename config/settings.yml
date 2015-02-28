@@ -1,0 +1,3 @@
+forecast:
+  host: "https://api.forecast.io/forecast"
+  api_key: "21f9fd04dbfcf4785efee1f46ad25e8c"

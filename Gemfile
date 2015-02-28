@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'pg',         '~> 0.18'
-gem 'rails',      '4.2.0'
+gem 'pg',           '~> 0.18'
+gem 'rails',        '~> 4.2'
+gem 'rails-api',    '~> 0.4'
+gem 'rails_config', '~> 0.4'
+gem 'rest-client',  '~> 1.7'
 
 group :development, :test do
   gem 'pry'
