@@ -1,3 +1,3 @@
 class Fish < ActiveRecord::Base
-  belongs_to :fisherman
+  belongs_to :user
 end
