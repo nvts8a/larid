@@ -7,6 +7,7 @@ gem 'rails_config', '~> 0.4'
 gem 'rest-client',  '~> 1.7'
 
 group :development, :test do
+  gem 'mocha',      '~> 1.1'
   gem 'pry'
   gem 'rubocop',    '~> 0.29'
   gem 'spring',     '~> 1.2'
