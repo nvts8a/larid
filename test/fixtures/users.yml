@@ -1,0 +1,11 @@
+joe:
+  first_name: Joe
+  last_name: User
+  email: joe_user@example.com
+  password: joe_password
+
+jane:
+  first_name: Jane
+  last_name: User
+  email: jane_user@example.com
+  password: jane_password
