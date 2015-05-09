@@ -8,20 +8,20 @@ class V1::UsersController < ApplicationController
   end
   
   def create
-    render json: User.create(user_params)
+    render json: User.create(user_params), status: 201
   end
 
   def destroy
-    render json: User.find_by(email: params[:email], password: params[:password]).destroy
+    render json: User.find(params[:id]).destroy, status: 204
   end
 
   def update
-    render json: User.find_by(email: params[:email], password: params[:password]).update(user_params)
+    render json: User.find(params[:id]).update!(user_params), status: 204
   end
 
   private
 
   def user_params
-    params.permit(:email, :first_name, :last_name, :password)
+    params.require(:user).permit(:email, :first_name, :last_name, :password)
   end
 end
