@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509152053) do
+ActiveRecord::Schema.define(version: 20150510191737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+  end
+
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "api_keys", force: :cascade do |t|
     t.integer  "user_id"
@@ -25,21 +35,6 @@ ActiveRecord::Schema.define(version: 20150509152053) do
   end
 
   add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
-
-  create_table "fish", force: :cascade do |t|
-    t.integer  "fisherman_id"
-    t.string   "species"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.datetime "catch_time"
-    t.decimal  "latitude"
-    t.decimal  "length"
-    t.decimal  "longitude"
-    t.string   "sex"
-    t.decimal  "weight"
-  end
-
-  add_index "fish", ["fisherman_id"], name: "index_fish_on_fisherman_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
