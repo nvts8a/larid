@@ -1,6 +1,5 @@
 class V1::SessionsController < ApplicationController
   def create
-    require 'pry'; binding.pry
     user = User.where("email = ? AND password = ?", params[:user][:email], params[:user][:password]).first
 
     if user
